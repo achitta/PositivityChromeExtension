@@ -1,0 +1,47 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="width: 400px">
+    <div class="headerDiv" style="float: right;">
+        <a href="../index.html">
+            <img src="../images/home.png" alt="home" width="50" height="25">
+        </a>
+    </div>
+    <div id="triviaCategories">
+        <h2>Select a category</h2>
+        <input type="button" id="any" value="Any Category"/> <br><br>
+        <input type="button" id="generalKnowledge" value="General Knowledge"/> <br><br>
+        <input type="button" id="sports" value="Sports"/><br><br>
+        <input type="button" id="computers" value="Computers"/><br><br>
+        <input type="button" id="geography" value="Geography"/> <br><br>
+    </div>
+    <div id="triviaDifficulty">
+        <h2>Select your difficulty</h2>
+        <input type="button" id="any" value="Any Difficulty"/> <br><br>
+        <input type="button" id="easy" value="Easy"/> <br><br>
+        <input type="button" id="medium" value="Medium"/><br><br>
+        <input type="button" id="hard" value="Hard"/><br><br>
+    </div>
+    <div id="triviaNumQuestions">
+        <h2>How many questions? (Select a number 1 through 50)</h2>
+        <input type="number" id="numQuestions" value=10 max=50 min=1 /> <br><br>
+        <input type="submit" id="numQuestionsSubmit" value="Submit">
+    </div>
+    <div id="currentQuestion">
+        <p id="progress"></p>
+        <h3 id="category"></h3>
+        <h3 id="question"></h3>
+        <div id="answerChoices"></div>
+        <input type="button" id="nextQuestion" value="Next Question">
+    </div>
+    <br>
+    <br>
+    <div id="endDisplay"> 
+        <h2 id="results"></h2>
+        <input type="button" id="refresh" value="Another Trivia Game?">
+    </div>
+    <input type="button" id="refresh" value="Another Quiz?" style="display: none">
+    <script src="../js/trivia.js"></script>
+</body>
+</html>
