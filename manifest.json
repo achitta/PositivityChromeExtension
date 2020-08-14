@@ -1,0 +1,15 @@
+{
+    "name": "Random Tools",
+    "version": "1.1",
+    "description": "A extension with many misc. tools, games, and more",
+    "permissions": [
+      "<all_urls>"
+    ],
+    "browser_action": {
+        "default_title": "Random Tools",
+        "default_popup": "index.html"
+    },
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+  }
+  
