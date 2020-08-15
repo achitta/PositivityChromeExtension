@@ -1,12 +1,12 @@
 var category = null;
-var difficulty = "";
+var difficulty = null;
 var numQuestions = 1;
 var results;
 var currIndex = 0;
 var correct = 0
 
 $(function() {
-    getCategories();
+    setupGame();
 });
 
 function getCategories() {
