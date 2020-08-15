@@ -1,6 +1,6 @@
 var category = null;
 var difficulty = "";
-var numQuestions = 10;
+var numQuestions = 1;
 var results;
 var currIndex = 0;
 var correct = 0
@@ -52,20 +52,21 @@ function getDifficulty() {
             flag = false;
         }
         if(flag) {
-            getNumQuestions(); 
+            $('#triviaDifficulty').hide();
+            setupGame(); 
         }
     });
 }
 
-function getNumQuestions() {
-    $('#triviaDifficulty').hide();
-    $('#triviaNumQuestions').show();
-    $('#numQuestionsSubmit').click(function() {
-        numQuestions = document.getElementById("numQuestions").value;
-        $('#triviaNumQuestions').hide();
-        setupGame();
-    });
-}
+// function getNumQuestions() {
+//     $('#triviaDifficulty').hide();
+//     $('#triviaNumQuestions').show();
+//     $('#numQuestionsSubmit').click(function() {
+//         numQuestions = document.getElementById("numQuestions").value;
+//         $('#triviaNumQuestions').hide();
+//         setupGame();
+//     });
+// }
 
 function setupGame() {
     var url = "https://opentdb.com/api.php?amount=" + numQuestions;
@@ -84,7 +85,7 @@ function setupGame() {
 
 function displayQuestion() {
     $('#nextQuestion').hide();
-    document.getElementById("currentQuestion").querySelector('#progress').innerHTML = (currIndex + 1) + " / " + numQuestions;
+    // document.getElementById("currentQuestion").querySelector('#progress').innerHTML = (currIndex + 1) + " / " + numQuestions;
     document.getElementById("currentQuestion").querySelector('#category').innerHTML = "Category: " + results[currIndex].category;
     document.getElementById("currentQuestion").querySelector('#question').innerHTML = results[currIndex].question;
     var correctAnswer = results[currIndex].correct_answer;
@@ -147,17 +148,18 @@ function displayQuestion() {
                     inputs[i].style.backgroundColor = "red";
                 }
             }
-            $('#nextQuestion').show();
-            $('#nextQuestion').click(function() { 
-                currIndex++;
-                $('#answerChoices').empty();
-                if (currIndex == results.length) {
-                    displayEndingScreen();
-                }
-                else {
-                    displayQuestion();
-                }
-            })
+            displayEndingScreen();
+            // $('#nextQuestion').show();
+            // $('#nextQuestion').click(function() { 
+            //     currIndex++;
+            //     $('#answerChoices').empty();
+            //     if (currIndex == results.length) {
+            //         displayEndingScreen();
+            //     }
+            //     else {
+            //         displayQuestion();
+            //     }
+            // })
         }
     });
 }
@@ -165,7 +167,7 @@ function displayQuestion() {
 
 function displayEndingScreen() {
     $('#endDisplay').show();
-    document.getElementById("endDisplay").querySelector("#results").innerHTML = "You got " + correct + " out of " + numQuestions + " questions correct!";
+    // document.getElementById("endDisplay").querySelector("#results").innerHTML = "You got " + correct + " out of " + numQuestions + " questions correct!";
     $('#refresh').click(function() {
         document.location.reload();
     })

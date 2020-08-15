@@ -20,7 +20,6 @@ function displayComic() {
 $(function() {
     $("#comicLink").click(function() {
         var newURL = document.getElementById("comicLink").href;
-        alert(newURL);
         chrome.tabs.create({ url: newURL });
     })
 });
