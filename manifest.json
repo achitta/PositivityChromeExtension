@@ -3,8 +3,7 @@
     "version": "1.1",
     "description": "A extension with many misc. tools, games, and more",
     "permissions": [
-      "<all_urls>",
-      "storage"
+      "<all_urls>"
     ],
     "browser_action": {
         "default_title": "Random Tools",
